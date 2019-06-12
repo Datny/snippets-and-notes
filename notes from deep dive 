@@ -1,0 +1,89 @@
+		       ## check if divider is not 0 to avoid Errors
+avg  = n and sum/n     #   if n is 0  bool(n) = false, otherwise assign sum/n to avg
+     		       # objects have their false/true value but when compared their return their regular value
+		       # instead of their falsy or truthy value 
+
+
+Form validation:       ## protect yourself against forms which where send empty or None
+if s:                  # if s is empty string or None bool(s) = False    
+  return s	       # 		
+else:
+  return ''	
+
+return (s and s[0]) or ''   ##same for func
+
+
+X or Y     If X is truthy, returns X  not checking Y value at all
+	   If X is falsy,checks Y and return it no matter if its falsy or truthy
+
+X and Y    If X is truthy check Y and return Y 
+	   If X is falsy, return X 
+
+### Python dont return booleans, it returns objects based on their truth value
+## not always return boolean value 
+
+###
+### Tuple is indicated by " , " not by () 
+a,b,c = [1,2,3]
+
+
+a,b = b,a 
+
+l = [1,2,3,4,5]
+a = l[0]
+b = l[1:]
+
+a, *b = l[0],l[1:]
+
+
+######################## GET SOME EXCERCISES WITH UNPACKING AND *  **
+
+
+
+d1 = {'key1': 1, 'key2': 2}
+d2 = {'key2': 3, 'key3': 3}
+
+{**d1, **d2}
+d1 = {'key1': 1, 'key2': 2}
+d2 = {'key2': 3, 'key3': 3}
+​
+{**d1, **d2}
+{'key1': 1, 'key2': 3, 'key3': 3}  The value for the second occurrence of **key2** was retained (overwritten).
+
+a*,b,(c,d*) = [1,2,3,'python']
+
+c*, = s   => cast set S to list 
+
+
+def my_func(a,b,c):
+    pass
+l = [1,2,3]
+my_func(*l)
+
+
+@@@@@@@@@@@@@@@  ENUMERATE - creates counter only when object passed in is iterable -> if its single element or None 
+enumerate dont set its counting variable to any number @@@@@@@@@@@@@@@@
+
+def avg(*args):
+    args_sum = 0
+    
+    for value in enumerate(args):
+        args_sum += value
+    if num:
+        return args_sum / num
+
+@@@ If avg()-> causes error 
+    If avg(x,)-> nothing happens since its not iterable so num == None, none is False and it fails If @@@
+
+
+EXHAUSTING POSITIONAL ARGUMENTS
+def my_func(a,b,*args,d):
+   pass
+
+my_func(2,5,arg1,arg2,arg3,arg4, d="passing_key_argument")
+
+def my_func(*,d)    --> Where * means after this point i wont look after positional arguments
+   pass 
+
+
+
