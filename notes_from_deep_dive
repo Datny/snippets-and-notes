@@ -85,5 +85,51 @@ my_func(2,5,arg1,arg2,arg3,arg4, d="passing_key_argument")
 def my_func(*,d)    --> Where * means after this point i wont look after positional arguments
    pass 
 
+@@@@@@@@@@@@@@@@@@@@  KWARGS @@@@@@@@@@
+
+def my_func(*,d,**kwargs):
+    print(d,kwargs)
+    
+my_func(d=12,c=2,e=10)
+
+@@@@@ USING DEFAULTS IN FUNCTIONS! @@@@
+def log(msg,*,dt=None):
+    dt = dt or datetime.utcnow()      ======> If putted as func argument, It will create a variable dt ONCE when func is created
+    print("{0}: {1}".format(dt,msg))          and it will result in never changing datetime, thats why its in func
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@2
+First class obj -> can be passed to func, returned, assigned to var, can be stored in data structure
+
+High order functions -> takes function as argument or returns function
+
+
+def my_func(a: "a string", b: "a string") -> "a string"  # last one -> is what func returns
+
+!! While writing documentation, use Sphinx to create documentation file.
+
+@@@@
+Lambda -> single expression, no assigments
+
+l = ['c','B','D','a']
+sorted(l,key=lambda x:x.upper())
+values of dict:
+sorted(d,key=lambda e: d[e])
+last char in el 
+sorted(l,key=lambda x: x[::-1])
+
+l = [1,2,3,4,5,6,7,8,9,10]
+sorted(l,key=lambda x: l[int(random()*len(l))])
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ If sort cant find which item in sorted list should be 1st element because key is same 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ it keeps order from original iterable
+
+dir() - > returns list of attributes for certain object which could be dunder methods or anything else
+
+
+
+
+
+
 
 
