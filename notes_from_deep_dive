@@ -128,8 +128,18 @@ dir() - > returns list of attributes for certain object which could be dunder me
 
 
 
+@@@@@@@@@@@@@ MAP FILTER ETC @@@@@@@@@@@@@
+l1 = [1,2,3]
+l2 = [10,20,30]   ## If any list was shorter than the other, the add function will stop at shorter list length
 
+def add(x,y):
+    return x+y
 
+list(map(add,l1,l2))
+
+@@Filter returns iterator of truthy elements from iterable passed in
+
+@@ Zip takes iterators 
 
 
 
